@@ -1,0 +1,34 @@
+<div
+  class="
+    input-group
+    mb-3
+    p-1
+    w-50
+    position-absolute
+    top-50
+    start-50
+    translate-middle
+  "
+>
+  <button type="button" class="close btn btn-secondary" aria-label="Close" (click)="clear()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <input
+    type="text"
+    class="form-control"
+    (keyup)="onSearchChange($event)"
+    value="{{ SelectedUser.Name }}"
+  />
+  <div class="container">
+    <div
+      class="card"
+      *ngFor="let each of searchedData"
+      (click)="selectCard(each)"
+      style="cursor:pointer;"
+    >
+      <div class="card-body">
+        <b class="">{{ each.Name }}</b>
+      </div>
+    </div>
+  </div>
+</div>
